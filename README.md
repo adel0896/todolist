@@ -1,3 +1,9 @@
+This is a "To do" list created by Adelina Radulescu 
+You can add new items to the list using the form, you can delete them and move them to "Done" list.
+
+Enjoy :)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
