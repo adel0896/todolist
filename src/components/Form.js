@@ -28,11 +28,11 @@ export default function Form(props) {
     <form onSubmit={submit}>
       <label>
         <h3>Title</h3>
-        <input type="text" name="title" value={title} onChange={titleChanged} />
+        <input type="text" name="title" placeholder="Task title" value={title} onChange={titleChanged} />
       </label>
       <label>
         <h3>Description</h3>
-        <input type="text" name="description" value={description} onChange={descriptionChanged} />
+        <input type="text" name="description" placeholder="Task description" value={description} onChange={descriptionChanged} />
       </label>
       <input type="submit" value="Save" />
     </form>
