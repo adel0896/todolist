@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Side from "./components/Side";
+import Main from "./components/Main";
 
-function App() {
+export default function App() {
+  const [cards, setCards] = useState([
+    {
+      title: "Homework",
+      list: "todo",
+      added: 1543445354344,
+      id: 1,
+      description: "Write the report.",
+      assignedTo: ["jofh"],
+    },
+    {
+      title: "Clean the apartment",
+      list: "todo",
+      added: 1543445354344,
+      id: 2,
+      description: "Wash dishes and vacuum",
+      assignedTo: ["jofh"],
+    },
+    {
+      title: "Send E-mails",
+      list: "todo",
+      added: 1543445354344,
+      id: 3,
+      description: "Answer to the new emails",
+      assignedTo: ["jofh"],
+    },
+  ]);
+  function onFormSubmit(data) {
+    console.log("form submitted", data);
+    setCards(cards.concat(data));
+  }
+  function onCardMove(id, whereTo) {
+    const nextCards = cards.map((card) => {
+      if (card.id === id) {
+        card.list = whereTo;
+      }
+      return card;
+    });
+    setCards(nextCards);
+  }
+  function onCardDelete(id) {
+    const nextCards = cards.filter((card) => card.id !== id);
+    setCards(nextCards);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Side onFormSubmit={onFormSubmit} />
+      <Main onCardDelete={onCardDelete} onCardMove={onCardMove} cards={cards} />
     </div>
   );
 }
-
-export default App;

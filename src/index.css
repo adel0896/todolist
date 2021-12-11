@@ -1,13 +1,103 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(46, 45, 45);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.App {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  height: 100vh;
+}
+h2,
+h3,
+p,
+li {
+  color: aliceblue;
+  font-family: sans-serif;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 1.3rem;
+}
+aside {
+  /* background: hotpink; */
+  color: aliceblue;
+  padding: 7vw;
+  font-size: 1.5rem;
+  padding-top: 8vw;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  /* align-items: center; */
+}
+main section {
+  padding-top: 5vw;
+}
+button {
+  border: none;
+  background: rgb(71, 71, 71);
+  color: aliceblue;
+  margin: 1vw 1vw 1vw 0;
+  padding: 1vw;
+  border-radius: 0.3rem;
+  transition: 0.5s;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+button:hover {
+  background: lightblue;
+  color: black;
+}
+form {
+  margin-top: 2vw;
+}
+input {
+  background: none;
+  border-radius: 3px;
+  padding: 0.3vw;
+  margin: 1vw;
+  color: aliceblue;
+  /* border: none; */
+}
+
+input[type="submit"] {
+  border: none;
+  background: rgb(71, 71, 71);
+  color: aliceblue;
+  margin: 1vw 1vw 1vw 0;
+  padding: 1vw;
+  border-radius: 0.3rem;
+  transition: 0.5s;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+input[type="submit"]:hover {
+  background: lightblue;
+  color: black;
+}
+@media screen and (max-width: 800px) {
+  .App {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  main {
+    grid-template-columns: 1fr;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  input[type="submit"] {
+    align-self: flex-start;
+  }
 }
